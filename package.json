@@ -1,0 +1,30 @@
+{
+  "name": "cypress-testing",
+  "version": "1.0.0",
+  "description": "automation testing with cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pprachit09/cypress.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Cypress"
+  ],
+  "author": "Prachit Patil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pprachit09/cypress/issues"
+  },
+  "homepage": "https://github.com/pprachit09/cypress#readme",
+  "dependencies": {
+    "cypress": "^3.1.4",
+    "excel4node": "^1.7.0",
+    "exceljs": "^1.7.0",
+    "node-datetime": "^2.1.2",
+    "xml2js": "^0.4.19"
+  }
+}
