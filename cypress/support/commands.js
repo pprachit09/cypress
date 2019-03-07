@@ -1,3 +1,12 @@
+
+
+Cypress.Commands.add("login", (username, password) => {
+    cy.visit('http://dev-cypress-testing.pantheonsite.io/user/login');
+    cy.get('#edit-name').type(username)
+    cy.get('#edit-pass').type(password)
+    cy.get('#edit-submit').click()
+})
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
