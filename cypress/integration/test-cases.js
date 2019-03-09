@@ -2,11 +2,15 @@ const secrets = require('../../services/secrets');
 
 //Test cases for anonymous user
 context('anon', () => {
-    it('has title and /user/login page', () => {
-        cy.visit('http://dev-cypress-testing.pantheonsite.io/user/login');
-        cy.title();
-    });
-});
+    //Load site before every test case
+    beforeEach( () => {
+        cy.visit('/')
+    })
+
+    it('site loading and has title', () => {
+        cy.title()
+    })
+})
 
 //Test cases for authenticated user
 context('auth', () =>{
@@ -19,4 +23,4 @@ context('auth', () =>{
         cy.login( 'sassad', 'ssasas');
         cy.contains('Unrecognized username or password')
     })
-} )
+})

@@ -1,4 +1,5 @@
 {
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "baseUrl": "http://dev-cypress-testing.pantheonsite.io/"
 }
   
