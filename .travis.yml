@@ -7,6 +7,6 @@ cache:
     #need to cache folder with Cypress binary
     - ~/.cache
 install:
-  - npm ci
+  - npm install
 script:
   - $(npm bin)/cypress run --record --key c116646d-bfdd-47b6-93b8-d77e56bd8719
