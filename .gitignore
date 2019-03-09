@@ -62,3 +62,6 @@ typings/
 
 # credentials file
 services/
+
+#cypress recorded vidoes
+cypress/videos/
