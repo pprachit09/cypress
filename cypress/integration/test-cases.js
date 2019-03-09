@@ -10,6 +10,13 @@ context('anon', () => {
     it('site loading and has title', () => {
         cy.title()
     })
+
+    it('has search functionality', () => {
+        cy.title()
+        cy.get('#edit-keys').type('cypress')
+        cy.get('#edit-submit').click()
+        cy.contains('Welcome to Cypress')
+    })
 })
 
 //Test cases for authenticated user
