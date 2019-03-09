@@ -1,4 +1,10 @@
 const secrets = require('../../services/secrets');
+const xml2js = require('xml2js');
+const parser = new xml2js.Parser();
+//to parse xml response
+parser.on('error', (err) =>{ 
+    console.log('Parser error', err) 
+});
 
 //Test cases for anonymous user
 context('anon', () => {
@@ -16,6 +22,16 @@ context('anon', () => {
         cy.get('#edit-keys').type('cypress')
         cy.get('#edit-submit').click()
         cy.contains('Welcome to Cypress')
+    })
+
+    it('has sitemap', () => {
+        cy.request('http://dev-cypress-testing.pantheonsite.io/sitemap.xml').then((response) => {
+            parser.parseString(response.body, (err, result) => {
+                for(let i = 0; i < result.urlset.url.length; i++ ){
+                    cy.request(result.urlset.url[i].loc.toString())
+                }
+            })
+        })
     })
 })
 
