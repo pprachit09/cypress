@@ -21,9 +21,7 @@
   },
   "homepage": "https://github.com/pprachit09/cypress#readme",
   "dependencies": {
-    "excel4node": "^1.7.0",
-    "exceljs": "^1.7.0",
-    "node-datetime": "^2.1.2",
+    "cryptr": "^4.0.2",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
