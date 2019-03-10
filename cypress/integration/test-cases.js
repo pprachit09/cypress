@@ -41,7 +41,7 @@ context('anon', () => {
 //Test cases for authenticated user
 context('auth', () =>{
     it('correct login credentials', () =>{
-        cy.login( 'site_admin', process.env.password );
+        cy.login( 'site_admin', Cypress.env('password') );
         cy.contains('Log out')
     })
 
