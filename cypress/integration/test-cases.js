@@ -1,4 +1,3 @@
-const secrets = require('../../services/secrets');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser();
 //to parse xml response
@@ -33,12 +32,16 @@ context('anon', () => {
             })
         })
     })
+
+    it('download functionality', () => {
+        cy.get(':nth-child(2) > .views-field-field-image-1 > .field-content > a').click()
+    })
 })
 
 //Test cases for authenticated user
 context('auth', () =>{
     it('correct login credentials', () =>{
-        cy.login( secrets.login.username, secrets.login.password );
+        cy.login( 'site_admin', Cypress.env('password') );
         cy.contains('Log out')
     })
 
