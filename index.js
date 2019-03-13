@@ -1,15 +1,19 @@
-// scripts/run-cypress-tests.js
-
 const cypress = require('cypress')
-const server = require('./lib/my-server')
+const keys = require('./services/keys')
 
-// start your server
-return server.start()
-.then(() => {
-  // kick off a cypress run
-  return cypress.run()
-  .then((results) => {
-    // stop your server when it's complete
-    return server.stop()
-  })
+cypress.run({
+	browser: 'chrome',
+	config: {
+		baseUrl: 'http://dev-cypress-testing.pantheonsite.io/',
+		chromeWebSecurity: false,
+	},
+	env:{
+		password: keys.login.password
+	},
+	key: 'i5kipi',
+	spec: './cypress/integration/test-cases.js'
+}).then((results) => {
+	console.log(results)
+}).catch((err) => {
+	console.log(err)
 })
