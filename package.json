@@ -1,10 +1,10 @@
 {
   "name": "cypress-testing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "automation testing with cypress",
   "main": "index.js",
   "scripts": {
-    "test": "npm install"
+    "test:coveralls":"jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "cypress": "^3.1.5"
+    "coveralls": "^3.0.3",
+    "cypress": "^3.1.5",
+    "jest": "^24.5.0"
   }
 }
